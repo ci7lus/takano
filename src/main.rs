@@ -19,13 +19,13 @@ fn main() {
     if decoded_key.len() != 32 {
         panic!("Key must be 32 bytes long");
     }
-    let key = Key::from_slice(&decoded_key);
+    let key = Key::from_slice(decoded_key);
     let decoded_nonce = &base64::decode(&args.nonce).unwrap();
     if decoded_nonce.len() != 12 {
         panic!("Nonce must be 12 bytes long");
     }
-    let nonce = Nonce::from_slice(&decoded_nonce);
-    let mut cipher = ChaCha20::new(&key, &nonce);
+    let nonce = Nonce::from_slice(decoded_nonce);
+    let mut cipher = ChaCha20::new(key, nonce);
     let stdout = std::io::stdout();
     let mut writer = stdout.lock();
     let mut buf = [0u8; BUF_SIZE];
