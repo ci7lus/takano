@@ -77,7 +77,7 @@ jobs:
           path: takano-${{ matrix.target }}.zip
       - name: Upload binary to release
         uses: softprops/action-gh-release@v1
-        if: startsWith(${{ github.ref }}, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: takano-${{ matrix.target }}.zip
         env:
