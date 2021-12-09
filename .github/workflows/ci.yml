@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - "**"
-    tags-ignore:
-      - "**"
+    tags:
+      - "v*"
     paths-ignore:
       - .gitignore
       - LICENSE
@@ -15,8 +15,6 @@ on:
       - .gitignore
       - LICENSE
       - "**.md"
-  release:
-    types: [published]
 
 jobs:
   build:
@@ -73,7 +71,7 @@ jobs:
           zip --junk-paths takano-${{ matrix.target }} target/${{ matrix.target }}/release/takano{,.exe}
       - uses: actions/upload-artifact@v2
         with:
-          name: build-${{ matrix.target }}
+          name: takano-${{ matrix.target }}
           path: takano-${{ matrix.target }}.zip
       - name: Upload binary to release
         uses: softprops/action-gh-release@v1
