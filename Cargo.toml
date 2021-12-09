@@ -2,7 +2,16 @@
 name = "takano"
 version = "0.1.0"
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["ci7lus <7887955+ci7lus@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+description = "ChaCha20 stream decrypt/encrypt cli tool"
+readme = "README.md"
+homepage = "https://github.com/ci7lus/takano"
+repository = "https://github.com/ci7lus/takano"
+keywords = ["chacha20", "crypto", "cli"]
+categories = ["command-line-utilities"]
 
 [dependencies]
+structopt = "0.3.13"
+chacha20 = "0.8.1"
+base64 = "0.13.0"
