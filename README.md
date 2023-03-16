@@ -1,5 +1,7 @@
 # takano
 
+## Please do not use this tool! It is probably broken!
+
 ChaCha20 stream decrypt/encrypt cli tool
 
 ## Usage
